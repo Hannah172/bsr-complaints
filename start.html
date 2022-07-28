@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Complaints</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {% if serviceName %} {{ serviceName }} {% endif %}
+      </h1>
+
+      <p>Use this service to submit a concern or complaint about the safety of a high rise building, if you:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>live in the high rise building OR</li>
+        <li>are an employee of the high rise building</li>
+      </ul>
+
+      <p>A high rise building has at least 2 residential units and is <i>either</i> 18m high OR has 6 or more storeys.</p>
+
+      {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{{ govukWarningText({
+  text: "Before using this  service you must have first raised the complaint with your building manager (if you own the property) or your landlord (if you rent the property) at least 2 weeks ago.",
+  iconFallbackText: "Warning"
+}) }}
+
+      <p>You can choose to remain anonymous to your Building Manager (and all building staff) within this process.</p>
+
+      <p>Submitting a complaint takes around 5 minutes.</p>
+
+      <a href="question_address" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>You'll be asked for details about who you've already raised this complaint to and when. You'll also be asked to provide any supporting documentation. You'll be contacted if more evidence is needed.</p>
+
+      <p>You can also <a href="#">send a complaint by post</a>.</p>
+
+      <p><b>If you need help using this service</b></p>
+
+      <p>You can call [Digital Assistance Charity] on the number below and they will support you through this process.</p>
+
+      <p>Telephone: 01234 567890</p>
+      <p>Monday to Friday, 9am to 5pm (except public holidays)</p>
+      <p>If you need an interpreter, please fill out this <a href="#">short request form</a>.</p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}
