@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        You do not need to register this building
+      </h1>
+
+      <p>If the building is not either 18m tall or has 6 storeys or more, then you do not need to register the building.</p>
+
+      <p>Read more <a href="/url/of/onward/page">about this topic</a>.</p>
+
+    </div>
+  </div>
+
+{% endblock %}

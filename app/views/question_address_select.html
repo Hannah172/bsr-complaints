@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="question_contact" method="post">
+        
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+{% call govukFieldset({
+  legend: {
+    text: "What is the address of the building?",
+    classes: "govuk-fieldset__legend--l",
+    isPageHeading: true
+  }
+}) %}
+
+</br>
+
+<h3 class="govuk-heading-m">Postcode</h3>
+<p class="govuk-body">{{ data['address-postcode'] }}</p>
+
+<h3 class="govuk-heading-m">Select address</h3>
+  {{ govukSelect({
+  id: "select",
+  name: "select",
+
+  items: [
+    {
+      value: "selectAddress",
+      text: "Select address",
+      selected: true
+    },
+    {
+      value: "address1",
+      text: "Address 1"
+    },
+    {
+      value: "address2",
+      text: "Address 2"
+    },
+    {
+      value: "address3",
+      text: "Address 3"
+    }
+  ]
+}) }}
+
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{{ govukDetails({
+  summaryText: "I can't find the address",
+  text: "If you cannot find the address you are looking for, please get in touch with our customer service team."
+}) }}
+
+{% endcall %}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
