@@ -16,9 +16,6 @@
         <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
       </li>
       <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">Contact service</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
         <a class="govuk-breadcrumbs__link">Complaints</a>
       </li>
     </ol>
@@ -33,19 +30,23 @@
         {% if serviceName %} {{ serviceName }} {% endif %}
       </h1>
 
-      <p>Use this service to submit a concern or complaint about the safety of the building you live in. The building must be either:</p>
+      <p>Use this service to submit a concern or complaint about the safety of a high rise building, if you:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>over 18m high OR</li>
-        <li>7 or more storeys</li>
+        <li>live in the high rise building OR</li>
+        <li>are an employee of the high rise building</li>
       </ul>
+
+      <p>A high rise building has at least 2 residential units and is <i>either</i> 18m high OR has 6 or more storeys.</p>
 
       {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
 {{ govukWarningText({
-  text: "You must attempt to raise the complaint with your building manager before using this service.",
+  text: "Before using this  service you must have first raised the complaint with your building manager (if you own the property) or your landlord (if you rent the property) at least 2 weeks ago.",
   iconFallbackText: "Warning"
 }) }}
+
+      <p>You can choose to remain anonymous to your Building Manager (and all building staff) within this process.</p>
 
       <p>Submitting a complaint takes around 5 minutes.</p>
 
@@ -58,7 +59,17 @@
 
       <h2 class="govuk-heading-m">Before you start</h2>
 
+      <p>You'll be asked for details about who you've already raised this complaint to and when. You'll also be asked to provide any supporting documentation. You'll be contacted if more evidence is needed.</p>
+
       <p>You can also <a href="#">send a complaint by post</a>.</p>
+
+      <p><b>If you need help using this service</b></p>
+
+      <p>You can call [Digital Assistance Charity] on the number below and they will support you through this process.</p>
+
+      <p>Telephone: 01234 567890</p>
+      <p>Monday to Friday, 9am to 5pm (except public holidays)</p>
+      <p>If you need an interpreter, please fill out this <a href="#">short request form</a>.</p>
 
     </div>
 
