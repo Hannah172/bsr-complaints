@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="question_complaint_text" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "complaint-type",
+  name: "complaint-type",
+  fieldset: {
+    legend: {
+      text: "What is your complaint about?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "there has been a fire",
+      text: "There has been a fire"
+    },
+    {
+      value: "there is a risk of fire",
+      text: "There is a risk of fire"
+    },
+    {
+      value: "there is a structural issue",
+      text: "There is a structural issue"
+    },
+    {
+      value: "I'm-not-sure",
+      text: "I'm not sure"
+    }
+  ]
+}) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

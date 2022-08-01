@@ -13,32 +13,32 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="question_contact_date" method="post">
+      <form class="form" action="question_contact" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          idPrefix: "previous-complaint-raised",
-          name: "previous-complaint-raised",
+          idPrefix: "resident-or-employee",
+          name: "resident-or-employee",
           fieldset: {
             legend: {
-              text: "Have you made the complaint to your Building Manager or Landlord first?",
+              text: "Are you a resident or an employee?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
-            text: "You must make a complaint to your Building Manager (if you own your property) or Landlord (if you rent your property) first. If no progress is made within two weeks, you can submit your complaint here."
+            text: "You can submnit a concern or complaint if you are a resident OR an employee."
           },
           items: [
             {
-              value: "yes",
-              text: "Yes"
+              value: "Resident",
+              text: "Resident"
             },
             {
-              value: "no",
-              text: "No"
+              value: "Employee",
+              text: "Employee"
             }
           ]
         }) }}

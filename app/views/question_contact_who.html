@@ -19,26 +19,26 @@
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          idPrefix: "previous-complaint-raised",
-          name: "previous-complaint-raised",
+          idPrefix: "changed-name",
+          name: "changed-name",
           fieldset: {
             legend: {
-              text: "Have you made the complaint to your Building Manager or Landlord first?",
+              text: "Did you report the complaint to your building manager or landlord?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
-            text: "You must make a complaint to your Building Manager (if you own your property) or Landlord (if you rent your property) first. If no progress is made within two weeks, you can submit your complaint here."
+            text: "If you rent your property you should speak to your landlord. If you own your property you should speak to your Building Manager."
           },
           items: [
             {
-              value: "yes",
-              text: "Yes"
+              value: "building manager",
+              text: "Building Manager"
             },
             {
-              value: "no",
-              text: "No"
+              value: "landlord",
+              text: "Landlord"
             }
           ]
         }) }}

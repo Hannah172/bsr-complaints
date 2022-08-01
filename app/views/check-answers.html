@@ -12,84 +12,168 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check your answers before sending your registration</h1>
+      <h1 class="govuk-heading-xl">Check your answers before submitting your complaint</h1>
 
-      <h2 class="govuk-heading-m">Building details</h2>
+      <h2 class="govuk-heading-m">Complaint details</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Address
+            Resident or employee
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['building-name'] }}
-            <br>{{ data['address-line-1'] }}
-            <br>{{ data['address-line-2'] }}
-            <br>{{ data['address-town'] }}
-            <br>{{ data['address-county'] }}
-            <br>{{ data['address-postcode'] }}
+            {{ data['resident-or-employee'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="question_address">
+            <a href="question_resident_or_employee">
               Change
-              <span class="govuk-visually-hidden"> home address</span>
+              <span class="govuk-visually-hidden"> resident or employee</span>
             </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Storeys
+            Complaint first raised
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['storeys'] }} storeys
+            {{ data['complaint-raised'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="question_storeys">
+            <a href="question_contact_date">
               Change
-              <span class="govuk-visually-hidden"> building storeys</span>
+              <span class="govuk-visually-hidden"> complaint first raised</span>
             </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Height
+            First contact detail
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['height'] }} metres
+            {{ data['first-contact-detail'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="question_height">
+            <a href="question_contact_text">
               Change
-              <span class="govuk-visually-hidden"> building height</span>
+              <span class="govuk-visually-hidden"> complaint first raised</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Complaint type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['complaint-type'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question_complaint_type">
+              Change
+              <span class="govuk-visually-hidden"> complaint type</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Complaint detail
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['complaint-detail'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question_complaint_text">
+              Change
+              <span class="govuk-visually-hidden"> complaint detail</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Remain anonymous
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['choose-anonymous'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question_anonymous">
+              Change
+              <span class="govuk-visually-hidden"> remain anonymous</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question_personal_details">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['phone-number'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question_personal_details">
+              Change
+              <span class="govuk-visually-hidden"> phonee number</span>
             </a>
           </dd>
         </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Residential units
+          Email address
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['units'] }} residential units
+          {{ data['email-address'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="question_units">
+          <a href="question_personal_details">
             Change
-            <span class="govuk-visually-hidden"> residential units</span>
+            <span class="govuk-visually-hidden"> email address</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['building-name'] }}
+          <br>{{ data['address-line-1'] }}
+          <br>{{ data['address-line-2'] }}
+          <br>{{ data['address-town'] }}
+          <br>{{ data['address-county'] }}
+          <br>{{ data['address-postcode'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="question_personal_address">
+            Change
+            <span class="govuk-visually-hidden"> home address</span>
           </a>
         </dd>
       </div>
     </dl>
 
-      <h2 class="govuk-heading-m">Now send your registration</h2>
+      <h2 class="govuk-heading-m">Now submit your complaint</h2>
 
-      <p>By submitting this registration you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      <p>By submitting this complaint you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
 
       <form action="/confirmation" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
-          Accept and send
+          Submit
         </button>
 
       </form>
