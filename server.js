@@ -306,6 +306,51 @@ if (useV6) {
 
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
 app.post(/^\/([^.]+)$/, function (req, res) {
+  if (req.params[0]=="question_resident_or_employee_answer"){
+    var resident = req.session.data['resident']
+
+    // Check whether the variable matches a condition
+    if (resident == 'resident'){
+      // Send user to next page
+      res.redirect('/question_contact')
+    } else {
+      // Send user to ineligible page
+      res.redirect('/question_complaint_text')
+    }
+  }
+
+  if (req.params[0]=="question_complaint_type_answer"){
+    var complaint = req.session.data['complaint-type']
+
+    // Check whether the variable matches a condition
+    if (complaint == 'fire'){
+      // Send user to next page
+      res.redirect('/question_resident_or_employee')
+    } else if (complaint == 'risk-of-fire'){
+        // Send user to next page
+        res.redirect('/question_resident_or_employee')
+      } else if (complaint == 'structural'){
+          // Send user to next page
+          res.redirect('/question_resident_or_employee')
+    } else {
+      // Send user to ineligible page
+      res.redirect('/question_complaint_type_ineligible')
+    }
+  }
+
+  if (req.params[0]=="question_contact_answer"){
+    var previous = req.session.data['previous-complaint-raised']
+
+    // Check whether the variable matches a condition
+    if (previous == 'yes'){
+      // Send user to next page
+      res.redirect('/question_contact_date')
+    } else {
+      // Send user to ineligible page
+      res.redirect('/question_contact_ineligible')
+    }
+  }
+
   res.redirect(url.format({
     pathname: '/' + req.params[0],
     query: req.query
