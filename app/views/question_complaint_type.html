@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="question_complaint_text" method="post">
+      <form class="form" action="question_complaint_type_answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -29,20 +29,32 @@
   },
   items: [
     {
-      value: "there has been a fire",
+      value: "fire",
       text: "There has been a fire"
     },
     {
-      value: "there is a risk of fire",
+      value: "risk-of-fire",
       text: "There is a risk of fire"
     },
     {
-      value: "there is a structural issue",
+      value: "structural",
       text: "There is a structural issue"
     },
     {
-      value: "I'm-not-sure",
-      text: "I'm not sure"
+      value: "noise or neighbour",
+      text: "Noise pollution or neighbour disputes"
+    },
+    {
+      value: "environmental",
+      text: "Environmental issues"
+    },
+    {
+      value: "criminal or vandalism",
+      text: "Criminal damage or vandalism"
+    },
+    {
+      value: "crime or theft",
+      text: "Violent crime or theft"
     }
   ]
 }) }}

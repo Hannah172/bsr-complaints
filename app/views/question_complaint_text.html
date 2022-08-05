@@ -9,24 +9,37 @@
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Tell us about your concern or complaint</h1>
 
       <form class="form" action="question_anonymous" method="post">
 
         {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
+        {{ govukTextarea({
+                  label: {
+                    text: "Please explain your safety concern or complaint",
+                    classes: "govuk-label--l"
+                  },
+                  hint: {
+                    text: "Please include as much detail as possible, including whether you own the property, if you're a private tenant, leaseholder and so on. You can add supporting documentation below."
+                  },
+                  classes: "govuk-label--l",
+                  id: "complaint-text",
+                  name: "complaint-text"
+                }) }}
+
 {{ govukTextarea({
   name: "complaint-detail",
   id: "complaint-detail",
   label: {
-    text: "What is your concern or complaint?",
+    text: "If your Building Manager knows about this complaint, what has happened so far?",
     classes: "govuk-label--l",
     isPageHeading: true
   },
   hint: {
-    text: "Please include as much detail as possible. You can add supporting documentation below."
+    text: "For example, have they responded to you or carried out any investigations?"
   }
 }) }}
 

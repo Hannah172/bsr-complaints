@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="question_contact_date" method="post">
+      <form class="form" action="question_contact_answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -23,13 +23,13 @@
           name: "previous-complaint-raised",
           fieldset: {
             legend: {
-              text: "Have you made the complaint to your Building Manager or Landlord first?",
+              text: "Have you spoken to your Building Manager or Landlord about your concern or complaint?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
-            text: "You must make a complaint to your Building Manager (if you own your property) or Landlord (if you rent your property) first. If no progress is made within two weeks, you can submit your complaint here."
+            text: "You should allow reasonable time for your Building Manager (if you own your property) or Landlord (if you rent your property) to deal with your concern or complaint first."
           },
           items: [
             {

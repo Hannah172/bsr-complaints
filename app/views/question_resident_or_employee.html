@@ -13,14 +13,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="question_contact" method="post">
+      <form class="form" action="/question_resident_or_employee_answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          idPrefix: "resident-or-employee",
-          name: "resident-or-employee",
+          idPrefix: "resident",
+          name: "resident",
           fieldset: {
             legend: {
               text: "Are you a resident or an employee?",
@@ -29,15 +29,15 @@
             }
           },
           hint: {
-            text: "You can submnit a concern or complaint if you are a resident OR an employee."
+            text: "You can submit a concern or complaint if you are a resident OR an employee."
           },
           items: [
             {
-              value: "Resident",
+              value: "resident",
               text: "Resident"
             },
             {
-              value: "Employee",
+              value: "employee",
               text: "Employee"
             }
           ]

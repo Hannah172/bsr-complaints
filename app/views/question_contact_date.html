@@ -13,13 +13,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="question_contact_text" method="post">
+      <form class="form" action="question_complaint_text" method="post">
 
         {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
   {{ govukDateInput({
-    id: "complaint-raised",
-    namePrefix: "complaint-raised",
+    id: "date",
+    namePrefix: "date",
     fieldset: {
       legend: {
         text: "When did you first raise this complaint with your Building Manager or Landlord?",
