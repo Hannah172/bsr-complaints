@@ -310,7 +310,7 @@ app.post(/^\/([^.]+)$/, function (req, res) {
     var resident = req.session.data['resident']
 
     // Check whether the variable matches a condition
-    if (resident == 'resident'){
+    if (resident == 'Resident'){
       // Send user to next page
       res.redirect('/question_contact')
     } else {
@@ -323,13 +323,13 @@ app.post(/^\/([^.]+)$/, function (req, res) {
     var complaint = req.session.data['complaint-type']
 
     // Check whether the variable matches a condition
-    if (complaint == 'fire'){
+    if (complaint == 'There has been a fire'){
       // Send user to next page
       res.redirect('/question_resident_or_employee')
-    } else if (complaint == 'risk-of-fire'){
+    } else if (complaint == 'There is a risk of fire'){
         // Send user to next page
         res.redirect('/question_resident_or_employee')
-      } else if (complaint == 'structural'){
+      } else if (complaint == 'There is a structural issue'){
           // Send user to next page
           res.redirect('/question_resident_or_employee')
     } else {
@@ -348,6 +348,19 @@ app.post(/^\/([^.]+)$/, function (req, res) {
     } else {
       // Send user to ineligible page
       res.redirect('/question_contact_ineligible')
+    }
+  }
+
+  if (req.params[0]=="question_contact_ineligible_type_answer"){
+    var reason = req.session.data['reason']
+
+    // Check whether the variable matches a condition
+    if (reason == 'waste'){
+      // Send user to next page
+      res.redirect('/question_contact_ineligible_final')
+    } else {
+      // Send user to ineligible page
+      res.redirect('/question_complaint_text')
     }
   }
 

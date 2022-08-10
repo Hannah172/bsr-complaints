@@ -16,7 +16,7 @@
         <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
       </li>
       <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link">Complaints</a>
+        <a class="govuk-breadcrumbs__link">Report complaint to BSR</a>
       </li>
     </ol>
   </div>
@@ -30,11 +30,11 @@
         {% if serviceName %} {{ serviceName }} {% endif %}
       </h1>
 
-      <p>Use this service to submit a concern or complaint about the safety of a high rise building, if you:</p>
+      <p>Use this service to submit a concern or complaint about the safety of a high rise building, if:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>live in the high rise building OR</li>
-        <li>are an employee of the high rise building</li>
+        <li>you live in the high rise building OR</li>
+        <li>your job requires spending time in the high rise building</li>
       </ul>
 
       <p>A high rise building has at least 2 residential units and is <i>either</i> 18m high OR has 6 or more storeys.</p>
@@ -42,13 +42,31 @@
       {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
 {{ govukWarningText({
-  text: "Before using this  service you must have first raised the complaint with your building manager (if you own the property) or your landlord (if you rent the property) at least 2 weeks ago.",
+  text: "If your complaint concerns an immediate risk of injury or death, please call 999.",
   iconFallbackText: "Warning"
 }) }}
 
-      <p>You can choose to remain anonymous to your Building Manager (and all building staff) within this process.</p>
+<p>Before using this service you must have first raised the concern or complaint with your building manager (if you own the property) or your landlord (if you rent the property) and given them reasonable time to respond.</p>
 
-      <p>Submitting a complaint takes around 5 minutes.</p>
+      <p>You can choose to remain anonymous to your building manager (and all building staff) within this process.</p>
+
+      <p>Submitting a concern or complaint takes around 5 minutes.</p>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>You'll be asked for details about who you've already raised this concern to and when. You'll also be asked to provide any supporting documentation. You'll be contacted if more evidence is needed.</p>
+
+      <h2 class="govuk-heading-m">When not to use this service</h2>
+
+      <p>You should not use this service if your concern or complaint is about:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>noise complaints (<a href="#">contact your local authority</a>)</li>
+        <li>neighbour disputes (<a href="#">see GOV.UK's guidance</a>)</li>
+        <li>environmental issues (<a href="#">contact your local authority</a>)</li>
+        <li>criminal damage or vandalism (call the non-emergency police line on 150)</li>
+        <li>violent crime or theft (call the non-emergency police line on 150)</li>
+      </ul>
 
       <a href="question_address" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
         Start now
@@ -57,30 +75,14 @@
         </svg>
       </a>
 
-      <h2 class="govuk-heading-m">Before you start</h2>
+      <h2 class="govuk-heading-m">If you need help using this service</h2>
 
-      <p>You'll be asked for details about who you've already raised this complaint to and when. You'll also be asked to provide any supporting documentation. You'll be contacted if more evidence is needed. You can choose to stay anonymous.</p>
+<p>The quickest way to raise a concern or complaint with us is using this online service. If you can't use this service, though, you can phone our support team and we will fill in the form with you.</p>
 
-      <p>You can also <a href="#">send a complaint by post</a>.</p>
-
-      <p><b>If you need help using this service</b></p>
-
-      <p>You can call [Digital Assistance Charity] on the number below and they will support you through this process.</p>
-
-      <p>Telephone: 01234 567890</p>
-      <p>Monday to Friday, 9am to 5pm (except public holidays)</p>
+      <p>Telephone: 0300 003 1647</p>
+      <p>Monday, Tuesday, Thursday, Friday: 8:30am to 5pm (except public holidays)</p>
+      <p>Wednesday: 10am to 5pm</p>
       <p>If you need an interpreter, please fill out this <a href="#">short request form</a>.</p>
-
-      <p><b>When you should not use this service</b></p>
-
-      <p>You should not use this service if your complaint is about:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>noise pollution</li>
-        <li>neighbour disputes</li>
-        <li>environmental issues</li>
-        <li>a crime</li>
-      </ul>
 
     </div>
 

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+        {% block content %}
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+<form class="form" action="question_complaint_text" method="post">
+
+                <h1 class="govuk-heading-l">The Building Safety Regulator is responsible for fire and structural safety issues only.</h1>
+                <p class="govuk-body">
+                  If your complaint relates to something else, please see the guidance below on who to speak to.
+                </p>
+
+                {{ govukWarningText({
+                  text: "If your complaint concerns an immediate risk of injury or death, please call 999.",
+                  iconFallbackText: "Warning"
+                }) }}
+
+                <p class="govuk-body">
+                  Your complaint will be handled faster if it is directed to the correct team.
+                </p>
+
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>For noise complaints or environmental issues, <a href="#" class="govuk-link">contact your local authority</a></li>
+                  <li>For neighbour disputes, <a href="#" class="govuk-link">see GOV.UK's guidance</a></li>
+                  <li>For criminal damage, vandalism or theft, call the non-emergency police line on 150</li>
+                </ul>
+
+            </div>
+          </div>
+
+        {% endblock %}

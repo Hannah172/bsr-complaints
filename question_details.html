@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="question_storeys" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+{% call govukFieldset({
+  legend: {
+    text: "Who did you speak to about your complaint first?",
+    classes: "govuk-fieldset__legend--l",
+    isPageHeading: true
+  }
+},
+hint: {
+text: "You must attempt to resolve any issues through your building manager or landlord first. If no progress has been made within two weeks, you can submit your complaint to the Building Safety Regulator."
+},
+}) %}
+
+{{ govukInput({
+  label: {
+    text: 'Name of landlord or Building Manager'
+  },
+  id: "building-name",
+  name: "building-name",
+  autocomplete: "building-name",
+  value: data['building-name']
+}) }}
+
+  {{ govukInput({
+    label: {
+      text: 'Address line 1'
+    },
+    id: "address-line-1",
+    name: "address-line-1",
+    autocomplete: "address-line1",
+    value: data['address-line-1']
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: 'Address line 2 (optional)'
+    },
+    id: "address-line-2",
+    name: "address-line-2",
+    autocomplete: "address-line2",
+    value: data['address-line-2']
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Town or city"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "address-town",
+    name: "address-town",
+    autocomplete: "address-level2",
+    value: data['address-town']
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "County (optional)"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "address-county",
+    name: "address-county",
+    value: data['address-county']
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Postcode"
+    },
+    classes: "govuk-input--width-10",
+    id: "address-postcode",
+    name: "address-postcode",
+    autocomplete: "postal-code",
+    value: data['address-postcode']
+  }) }}
+
+{% endcall %}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
