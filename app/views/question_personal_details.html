@@ -13,19 +13,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="question_personal_address" method="post">
+      <form class="form" action="check-answers" method="post">
 
         <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        What are your personal details?
+        What are your personal details, so we can keep you up to date on this case?
       </h1>
     </legend>
-
-  },
-  hint: {
-    text: "We will only use these details to keep you updated on this case."
-  },
 
     <div class="govuk-form-group">
       <label class="govuk-label" for="name">
@@ -35,17 +30,17 @@
     </div>
 
     <div class="govuk-form-group">
-      <label class="govuk-label" for="phone-number">
-        Phone number
-      </label>
-      <input class="govuk-input govuk-!-width-one-third" id="phone-number" name="phone-number" type="text" autocomplete="phone-number">
-    </div>
-
-    <div class="govuk-form-group">
       <label class="govuk-label" for="email-address">
         Email address
       </label>
-      <input class="govuk-input govuk-!-width-two-thirds" id="email-address" name="email-address" type="text" autocomplete="email-address">
+      <input class="govuk-input govuk-!-width-two-thirds" id="email-address" name="email-address" type="text" autocomplete="email-address1">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="phone-number">
+        Phone number (optional)
+      </label>
+      <input class="govuk-input govuk-!-width-one-third" id="phone-number" name="phone-number" type="text" autocomplete="phone-number">
     </div>
 
   </fieldset>

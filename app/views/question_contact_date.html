@@ -18,11 +18,11 @@
         {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
   {{ govukDateInput({
-    id: "date",
-    namePrefix: "date",
+    id: "first-date",
+    namePrefix: "first-date",
     fieldset: {
       legend: {
-        text: "When did you first raise this complaint with your Building Manager or Landlord?",
+        text: "When did you first raise this concern or complaint with your building manager or landlord?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--l"
       }

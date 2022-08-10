@@ -13,48 +13,36 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="question_complaint_type_answer" method="post">
+      <form class="form" action="question_contact_ineligible_type_answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  idPrefix: "complaint-type",
-  name: "complaint-type",
+  idPrefix: "reason",
+  name: "reason",
   fieldset: {
     legend: {
-      text: "What is your complaint about?",
+      text: "Why haven't you spoken to your building manager or landlord about your concern?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
   items: [
     {
-      value: "There has been a fire",
-      text: "There has been a fire"
+      value: "unacknowledged",
+      text: "I've tried and they haven't acknowledged receipt"
     },
     {
-      value: "There is a risk of fire",
-      text: "There is a risk of fire"
+      value: "unavailable",
+      text: "They're unavailable and the complaint is urgent"
     },
     {
-      value: "There is a structural issue",
-      text: "There is a structural issue"
+      value: "unable",
+      text: "I don't feel able to speak to them"
     },
     {
-      value: "noise or neighbour",
-      text: "Noise pollution or neighbour disputes"
-    },
-    {
-      value: "environmental",
-      text: "Environmental issues"
-    },
-    {
-      value: "criminal or vandalism",
-      text: "Criminal damage or vandalism"
-    },
-    {
-      value: "crime or theft",
-      text: "Violent crime or theft"
+      value: "waste",
+      text: "It would be a waste of time"
     }
   ]
 }) }}
