@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Why is there a risk of fire?</h1>
+
+      <form class="form" action="question_contact_text" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  idPrefix: "reasons",
+  name: "reasons",
+  fieldset: {
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "There is exposed electrical equipment",
+      text: "There is exposed electrical equipment"
+    },
+    {
+      value: "Cigarettes are used outside designated areas",
+      text: "Cigarettes are used outside designated areas"
+    },
+    {
+      value: "Fire doors are not properly maintained",
+      text: "Fire doors are not properly maintained"
+    },
+    {
+      value: "Sprinkler systems do not work",
+      text: "Sprinkler systems do not work"
+    },
+    {
+      value: "Fire alarms do not work",
+      text: "Fire alarms do not work"
+    }
+  ]
+}) }}
+
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{{ govukTextarea({
+  name: "other-reasons",
+  id: "other-reasons",
+  label: {
+    text: "Any other reasons?"
+  }
+}) }}
+
+{% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+{{ govukFileUpload({
+  id: "file-upload-1",
+  name: "file-upload-1",
+  label: {
+    text: "Upload a file (for example, a photograph)"
+  }
+
+}) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

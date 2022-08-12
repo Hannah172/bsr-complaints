@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="question_complaint_type" method="post">
+      <form class="form" action="question_anonymous" method="post">
 
         {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
@@ -21,12 +21,12 @@
   name: "first-contact-detail",
   id: "first-contact-detail",
   label: {
-    text: "What – if anything – has been done about your complaint so far?",
+    text: "If your building manager or landlord knows about this complaint, what has happened so far?",
     classes: "govuk-label--l",
     isPageHeading: true
   },
   hint: {
-    text: "Do not explain the complaint itself. You will be asked this next."
+    text: "For example, have they responded to you or carried out any investigations?"
   }
 }) }}
 

@@ -315,7 +315,7 @@ app.post(/^\/([^.]+)$/, function (req, res) {
       res.redirect('/question_contact')
     } else {
       // Send user to ineligible page
-      res.redirect('/question_complaint_text')
+      res.redirect('/question_complaint_text_firerisk')
     }
   }
 
@@ -360,7 +360,7 @@ app.post(/^\/([^.]+)$/, function (req, res) {
       res.redirect('/question_contact_ineligible_final')
     } else {
       // Send user to ineligible page
-      res.redirect('/question_complaint_text')
+      res.redirect('/question_complaint_text_firerisk')
     }
   }
 
