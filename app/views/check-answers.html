@@ -61,7 +61,21 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Complaint first raised
+            Contacted building manager or landldord?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['previous-complaint-raised'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question_contact">
+              Change
+              <span class="govuk-visually-hidden"> contacted building manager</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Contact made
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['first-date'] }}
@@ -75,15 +89,29 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Complaint summary
+            Cause of concern
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['complaint-text'] }}
+            {{ data['reasons'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="question_complaint_text">
+            <a href="question_complaint_text_firerisk">
               Change
-              <span class="govuk-visually-hidden"> complaint summary</span>
+              <span class="govuk-visually-hidden"> complaint reasons</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Concern - other or more detail
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['other-reasons'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question_complaint_text_firerisk">
+              Change
+              <span class="govuk-visually-hidden"> complaint reasons</span>
             </a>
           </dd>
         </div>
@@ -92,10 +120,10 @@
             First contact detail
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['complaint-detail'] }}
+            {{ data['first-contact-detail'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="question_complaint_text">
+            <a href="question_contact_text">
               Change
               <span class="govuk-visually-hidden"> first contact detail</span>
             </a>

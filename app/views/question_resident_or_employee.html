@@ -18,29 +18,29 @@
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          classes: "govuk-radios--inline",
-          idPrefix: "resident",
-          name: "resident",
-          fieldset: {
-            legend: {
-              text: "Are you a resident or an employee?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          hint: {
-            text: "You can submit a concern or complaint if you are a resident OR an employee."
-          },
-          items: [
-            {
-              value: "Resident",
-              text: "Resident"
-            },
-            {
-              value: "Employee",
-              text: "Employee"
-            }
-          ]
+        idPrefix: "resident",
+        name: "resident",
+        fieldset: {
+        legend: {
+        text: "Are you a resident or an employee?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+        }
+        },
+        items: [
+        {
+        value: "Resident",
+        text: "I'm a resident"
+        },
+        {
+        value: "Behalf of resident",
+        text: "I'm acting on behalf of a resident"
+        },
+        {
+        value: "Employee",
+        text: "I'm an employee"
+        }
+        ]
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>

@@ -310,12 +310,12 @@ app.post(/^\/([^.]+)$/, function (req, res) {
     var resident = req.session.data['resident']
 
     // Check whether the variable matches a condition
-    if (resident == 'Resident'){
+    if (resident == 'Employee'){
       // Send user to next page
-      res.redirect('/question_contact')
+      res.redirect('/question_complaint_text_firerisk')
     } else {
       // Send user to ineligible page
-      res.redirect('/question_complaint_text_firerisk')
+      res.redirect('/question_contact')
     }
   }
 
@@ -332,6 +332,12 @@ app.post(/^\/([^.]+)$/, function (req, res) {
       } else if (complaint == 'There is a structural issue'){
           // Send user to next page
           res.redirect('/question_resident_or_employee')
+        } else if (complaint == 'There is an electrical issue'){
+            // Send user to next page
+            res.redirect('/question_resident_or_employee')
+          } else if (complaint == 'Dangerous or risky behaviour'){
+              // Send user to next page
+              res.redirect('/question_resident_or_employee')
     } else {
       // Send user to ineligible page
       res.redirect('/question_complaint_type_ineligible')
@@ -342,7 +348,7 @@ app.post(/^\/([^.]+)$/, function (req, res) {
     var previous = req.session.data['previous-complaint-raised']
 
     // Check whether the variable matches a condition
-    if (previous == 'yes'){
+    if (previous == 'Yes'){
       // Send user to next page
       res.redirect('/question_contact_date')
     } else {
