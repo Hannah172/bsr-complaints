@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Tell us about your concern or complaint</h1>
+
+      <form class="form" action="question_anonymous" method="post">
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        {{ govukTextarea({
+                  label: {
+                    text: "Explain your safety concern or complaint",
+                    classes: "govuk-label--m"
+                  },
+                  hint: {
+                    text: "Include as much detail as possible, including whether you own the property, if you're a private tenant, leaseholder and so on. You can add supporting documentation below."
+                  },
+                  classes: "govuk-label--l",
+                  id: "complaint-text",
+                  name: "complaint-text"
+                }) }}
+
+{{ govukTextarea({
+  name: "complaint-detail",
+  id: "complaint-detail",
+  label: {
+    text: "If your building manager or landlord knows about this complaint, what has happened so far?",
+    classes: "govuk-label--m",
+    isPageHeading: true
+  },
+  hint: {
+    text: "For example, have they responded to you or carried out any investigations?"
+  }
+}) }}
+
+{% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+{{ govukFileUpload({
+  id: "file-upload-1",
+  name: "file-upload-1",
+  label: {
+    text: "Upload a file (for example, a photograph)"
+  }
+
+}) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

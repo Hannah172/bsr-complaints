@@ -310,7 +310,7 @@ app.post(/^\/([^.]+)$/, function (req, res) {
     var resident = req.session.data['resident']
 
     // Check whether the variable matches a condition
-    if (resident == 'Employee'){
+    if (resident == 'No'){
       // Send user to next page
       res.redirect('/question_complaint_text_firerisk')
     } else {
@@ -326,7 +326,7 @@ app.post(/^\/([^.]+)$/, function (req, res) {
     if (complaint == 'There has been a fire'){
       // Send user to next page
       res.redirect('/question_resident_or_employee')
-    } else if (complaint == 'There is a risk of fire'){
+    } else if (complaint == 'There is a risk of fire or electrocution'){
         // Send user to next page
         res.redirect('/question_resident_or_employee')
       } else if (complaint == 'There is a structural issue'){
@@ -335,7 +335,7 @@ app.post(/^\/([^.]+)$/, function (req, res) {
         } else if (complaint == 'There is an electrical issue'){
             // Send user to next page
             res.redirect('/question_resident_or_employee')
-          } else if (complaint == 'Dangerous or risky behaviour'){
+          } else if (complaint == 'There is a trip or fall hazard'){
               // Send user to next page
               res.redirect('/question_resident_or_employee')
     } else {

@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="question_complaint_type_answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "complaint-type",
+          name: "complaint-type",
+          fieldset: {
+            legend: {
+              text: "What  is your safety concern or complaint about?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select one option. You'll be able to give more detail shortly."
+          },
+          items: [
+            {
+              value: "There has been a fire",
+              text: "There has been a fire",
+              hint: {
+                text: "A fire occurred in or near your building."
+              }
+            },
+            {
+              value: "There is a risk of fire or electrocution",
+              text: "There is a risk of fire or electrocution",
+              hint: {
+                text: "For example, from exposed electrical wires, fire prevention measures not working, or people smoking outside designated areas."
+              }
+            },
+            {
+              value: "There is a structural issue",
+              text: "There is a structural issue",
+              hint: {
+                text: "For example, part of the building could fall and injure someone."
+              }
+            },
+            {
+              value: "There is a trip or fall hazard",
+              text: "There is a trip or fall hazard",
+              hint: {
+                text: "Someone could injure themselves."
+              }
+            },
+            {
+              value: "Noise pollution or neighbour disputes",
+              text: "Noise pollution or neighbour disputes",
+              hint: {
+                text: "For example, caused by loud music or rowdy parties."
+              }
+            },
+            {
+              value: "Environmental issues",
+              text: "Environmental issues",
+              hint: {
+                text: "The area around your building being poorly maintained."
+              }
+            },
+            {
+              value: "Criminal damage or vandalism",
+              text: "Criminal damage or vandalism",
+              hint: {
+                text: "Destruction or damage to property belonging to another person."
+              }
+            },
+            {
+              value: "Violent crime or theft",
+              text: "Violent crime or theft",
+              hint: {
+                text: "Violent crime ranges from assault to murder."
+              }
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
