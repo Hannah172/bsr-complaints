@@ -30,6 +30,17 @@
   }
 }) }}
 
+{% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+{{ govukFileUpload({
+  id: "file-upload-contact",
+  name: "file-upload-contact",
+  label: {
+    text: "Upload a file (such as an email exchange with your building manager)"
+  }
+
+}) }}
+
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
