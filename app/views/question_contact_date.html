@@ -17,20 +17,46 @@
 
         {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
-  {{ govukDateInput({
-    id: "first-date",
-    namePrefix: "first-date",
-    fieldset: {
-      legend: {
-        text: "When did you first raise this concern or complaint with your building manager or landlord?",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--l"
+    {{ govukDateInput({
+      id: "first-date",
+      namePrefix: "first-date",
+      fieldset: {
+        legend: {
+          text: "When did you first raise this complaint with your building manager or landlord?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "For example, 27 03 2022"
       }
-    },
-    hint: {
-      text: "For example, 27 3 2022"
+    }) }}
+
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "date-range",
+  name: "date-range",
+  fieldset: {
+    legend: {
+      text: "If not known, select a date range"
     }
-  }) }}
+  },
+  items: [
+    {
+      value: "In the last month",
+      text: "In the last month"
+    },
+    {
+      value: "1-2 months ago",
+      text: "1-2 months ago"
+    },
+    {
+      value: "More than 2 months ago",
+      text: "More than 2 months ago"
+    }
+  ]
+}) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
